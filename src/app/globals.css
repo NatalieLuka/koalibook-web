@@ -10,17 +10,26 @@
 body {
   background-color: var(--background);
   color: var(--paragraph-light);
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 a {
-  color: var(--primary);
+  color: var(--paragraph-dark);
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+nav a {
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--background);
 }
 
 h1,
@@ -51,12 +60,6 @@ button {
 
 button:hover {
   background-color: var(--secondary);
-}
-
-button:disabled {
-  background-color: var(--paragraph-light);
-  color: var(--background);
-  cursor: not-allowed;
 }
 
 .error-message {

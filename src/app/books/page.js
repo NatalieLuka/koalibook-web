@@ -2,6 +2,7 @@
 import { useAuth } from "@clerk/nextjs";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Navbar from "@/components/Navbar";
 
 const API = `${process.env.NEXT_PUBLIC_API_URL}/books`;
 
@@ -39,6 +40,7 @@ export default function Books() {
 
   return (
     <main>
+      <Navbar />
       <div className="container">
         <h1>Books Page</h1>
         <button>Add New Book</button>
