@@ -3,7 +3,7 @@ import { useAuth } from "@clerk/nextjs";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const API = "http://localhost:3000/books";
+const API = `${process.env.NEXT_PUBLIC_API_URL}/books`;
 
 export default function Books() {
   const { getToken } = useAuth();

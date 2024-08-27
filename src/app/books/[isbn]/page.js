@@ -4,7 +4,7 @@ import { useRouter, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useAuth } from "@clerk/nextjs";
 
-const API = "http://localhost:3000/books";
+const API = `${process.env.NEXT_PUBLIC_API_URL}/books`;
 
 export default function BookDetailPage() {
   const router = useRouter();
