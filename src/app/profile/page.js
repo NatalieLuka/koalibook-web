@@ -1,5 +1,6 @@
 "use client";
 import { useAuth } from "@clerk/nextjs";
+import Navbar from "@/components/Navbar";
 
 export default function Profile() {
   const { signOut } = useAuth();
@@ -13,8 +14,9 @@ export default function Profile() {
   };
   return (
     <main>
-      <div>
-        <p>I am the Profiles page</p>
+      <Navbar />
+      <div className="page-container">
+        <h1>My Profile</h1>
         <button onClick={handleSignOut}>Logout</button>
       </div>
     </main>

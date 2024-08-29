@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: var(--primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Schatten für mehr Tiefe */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Abstand zwischen Links */
+}
+
+.navLinks li {
+  margin: 0;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #333; /* Linkfarbe nach Belieben anpassen */
+}

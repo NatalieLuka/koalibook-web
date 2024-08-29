@@ -49,12 +49,14 @@ export default function BookDetailPage() {
 
   return (
     <div>
-      {/* eslint-disable-next-line */}
-      <img src={book.image} alt={book.title} />
-      <h1>{book.title}</h1>
-      <p>by {book.author}</p>
-      <p>{book.description}</p>
-      <button onClick={() => router.push("/books")}>Back to Books</button>
+      <div className="page-container">
+        {/* eslint-disable-next-line */}
+        <img src={book.image} alt={book.title} />
+        <h1>{book.title}</h1>
+        <p>by {book.author}</p>
+        <p>{book.description}</p>
+        <button onClick={() => router.push("/books")}>Back to Books</button>
+      </div>
     </div>
   );
 }
