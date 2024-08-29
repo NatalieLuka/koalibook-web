@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-      <div className="container">
+      <div className="page-container">
         <h1>Welcome to Koalibook</h1>
-        <h3>Your Cozy Space to Manage Your Reading Journey!</h3>
+        <h2>Your Cozy Space to Manage Your Reading Journey!</h2>
 
         <p>
           Koalibook is where bookworms meet cozy vibes. Track your reading

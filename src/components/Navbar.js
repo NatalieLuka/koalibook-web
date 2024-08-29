@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.logo}>
         <Image
-          src="/koala_book_icon.png"
+          src="/koalibook_icon2.png"
           alt="Koalibook Logo"
           width={80}
           height={80}

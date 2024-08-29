@@ -41,7 +41,7 @@ export default function Books() {
   return (
     <main>
       <Navbar />
-      <div className="container">
+      <div className="page-container">
         <h1>Books Page</h1>
         <button>Add New Book</button>
 

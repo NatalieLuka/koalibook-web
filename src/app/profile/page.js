@@ -15,7 +15,7 @@ export default function Profile() {
   return (
     <main>
       <Navbar />
-      <div className="container">
+      <div className="page-container">
         <h1>My Profile</h1>
         <button onClick={handleSignOut}>Logout</button>
       </div>
