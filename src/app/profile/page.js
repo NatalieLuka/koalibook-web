@@ -1,6 +1,7 @@
 "use client";
 import { useAuth } from "@clerk/nextjs";
 import Navbar from "@/components/Navbar";
+import ProgressBar from "@/components/Progressbar";
 
 export default function Profile() {
   const { signOut } = useAuth();
@@ -12,12 +13,14 @@ export default function Profile() {
       console.error("SignOut Error:", error);
     }
   };
+
   return (
     <main>
       <Navbar />
       <div className="page-container">
         <h1>My Profile</h1>
         <button onClick={handleSignOut}>Logout</button>
+        <ProgressBar />
       </div>
     </main>
   );

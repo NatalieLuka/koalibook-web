@@ -75,3 +75,13 @@ button:hover {
   width: 200px;
   height: 300px;
 }
+
+input {
+  padding: 5px;
+  font-size: 16px;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+}
