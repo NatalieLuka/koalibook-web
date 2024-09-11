@@ -18,16 +18,18 @@
   width: 30px;
   background-color: var(--primary);
   margin-bottom: 5px;
-  transition: height 0.3s ease;
+  transition: 0.3s ease;
   position: relative;
 }
 
 .icon {
+  top: -25px;
   width: 30px;
   height: 40px;
   position: absolute;
   left: 50%;
   transform: translateX(10px) translateY(20px);
+  transition: 0.3s ease;
 }
 
 .inputContainer {

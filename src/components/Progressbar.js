@@ -63,12 +63,12 @@ export default function ProgressBar() {
             <div key={index} className={styles.barContainer}>
               <p>{entry.pages}</p>
               <div className={styles.bar} style={{ height: `${barHeight}px` }}>
-                {barHeight > 0 && (
+                {barHeight > 19 && (
                   <Image
                     src={climbingKoala}
                     alt="Climbing Koala"
                     className={styles.icon}
-                    style={{ bottom: `${barHeight - 15}px` }}
+                    // style={{ bottom: `${barHeight - 15}px` }}
                   />
                 )}
               </div>
