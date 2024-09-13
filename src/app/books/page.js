@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useActiveBook } from "../../../context/ActiveBookContext";
 import Navbar from "@/components/Navbar";
+import koalaPlaceholder from "../../../public/noBookImage.png";
+import Image from "next/image";
 
 const API = `${process.env.NEXT_PUBLIC_API_URL}/books`;
 
@@ -72,8 +74,12 @@ export default function Books() {
         <ul>
           {books.map((book) => (
             <li key={book.isbn}>
-              {/* eslint-disable-next-line */}
-              <img className="image" src={book.image} alt={book.title} />
+              {book.image !== "22" && book.image ? (
+                <img className="image" src={book.image} alt={book.title} />
+              ) : (
+                <Image src={"/noBookImage.png"} width={200} height={200} />
+              )}
+
               <h2>{book.title}</h2>
               <p>by {book.author}</p>
               <button onClick={() => router.push(`/books/${book.isbn}`)}>
