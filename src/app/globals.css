@@ -131,6 +131,7 @@ button:hover {
 
 .book-card button:hover {
   background-color: var(--paragraph-dark);
+}
 
 input {
   padding: 5px;
@@ -140,5 +141,4 @@ input {
 select {
   padding: 5px;
   font-size: 16px;
-
 }
