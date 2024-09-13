@@ -18,7 +18,7 @@ export default function Home() {
           Koalibook is here to make your reading journey enjoyable and fun. Dive
           in and let’s start turning those pages together!
         </p>
-        <div>
+        <div className="login-container">
           <h3>Login</h3>
           <LoginForm />
         </div>

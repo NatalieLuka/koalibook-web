@@ -69,13 +69,12 @@ export default function Books() {
       <div className="page-container">
         <ul className="books-list">
           {books.map((book) => (
-            <li key={book.isbn}>
+            <li className="book-card" key={book.isbn}>
               {book.image !== "22" && book.image ? (
                 <img className="image" src={book.image} alt={book.title} />
               ) : (
                 <Image src={"/noBookImage.png"} width={200} height={200} />
               )}
-
 
               <h2>{book.title}</h2>
               <p>by {book.author}</p>
