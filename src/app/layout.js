@@ -7,7 +7,6 @@ import {
 } from "@clerk/nextjs";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { BookProvider } from "../../context/ActiveBookContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,19 +18,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-      <BookProvider>
-        <html lang="en">
-          <body className={inter.className}>
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-            {children}
-          </body>
-        </html>
-      </BookProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          {children}
+        </body>
+      </html>
     </ClerkProvider>
   );
 }

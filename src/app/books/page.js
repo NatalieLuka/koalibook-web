@@ -2,7 +2,6 @@
 import { useAuth } from "@clerk/nextjs";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { useActiveBook } from "../../../context/ActiveBookContext";
 import Navbar from "@/components/Navbar";
 import koalaPlaceholder from "../../../public/noBookImage.png";
 import Image from "next/image";
@@ -11,7 +10,6 @@ const API = `${process.env.NEXT_PUBLIC_API_URL}/books`;
 
 export default function Books() {
   const { getToken } = useAuth();
-  const { setActiveBook } = useActiveBook();
   const [books, setBooks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
@@ -84,14 +82,6 @@ export default function Books() {
               <p>by {book.author}</p>
               <button onClick={() => router.push(`/books/${book.isbn}`)}>
                 View Details
-              </button>
-              <button
-                onClick={() => {
-                  setActiveBook(book);
-                  router.push("/profile");
-                }}
-              >
-                Set as Active
               </button>
               <button onClick={() => handleRemoveBook(book.isbn)}>
                 Remove Book
