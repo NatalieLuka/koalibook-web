@@ -67,9 +67,7 @@ export default function Books() {
     <main>
       <Navbar />
       <div className="page-container">
-        <h1>Books Page</h1>
-
-        <ul>
+        <ul className="books-list">
           {books.map((book) => (
             <li key={book.isbn}>
               {book.image !== "22" && book.image ? (
@@ -77,6 +75,7 @@ export default function Books() {
               ) : (
                 <Image src={"/noBookImage.png"} width={200} height={200} />
               )}
+
 
               <h2>{book.title}</h2>
               <p>by {book.author}</p>
