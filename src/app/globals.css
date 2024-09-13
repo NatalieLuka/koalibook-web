@@ -38,7 +38,9 @@ h3,
 h4,
 h5,
 h6 {
+  font-size: 2rem;
   color: var(--paragraph-dark);
+  margin-bottom: 20px;
 }
 
 ul {
@@ -56,6 +58,8 @@ button {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
 }
 
 button:hover {
@@ -130,4 +134,14 @@ button:hover {
 
 .book-card button:hover {
   background-color: var(--paragraph-dark);
+
+input {
+  padding: 5px;
+  font-size: 16px;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+
 }
