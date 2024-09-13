@@ -1,0 +1,39 @@
+.chartContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px;
+  margin-top: 70px;
+  max-width: 400px;
+}
+
+.barContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30px;
+}
+
+.bar {
+  width: 30px;
+  background-color: var(--primary);
+  margin-bottom: 5px;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.icon {
+  top: -25px;
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(10px) translateY(20px);
+  transition: 0.3s ease;
+}
+
+.inputContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
