@@ -83,7 +83,6 @@ button:hover {
   margin-top: 20px;
 }
 
-/* Styling für jedes einzelne Buch (Kartenstil) */
 .book-card {
   background-color: var(--primary);
   border-radius: 10px;
@@ -98,7 +97,6 @@ button:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Buchbilder anpassen */
 .book-card img {
   width: 100%;
   height: auto;
@@ -107,21 +105,18 @@ button:hover {
   margin-bottom: 10px;
 }
 
-/* Titel des Buches */
 .book-card h2 {
   font-size: 1.2rem;
   color: var(--paragraph-dark);
   margin: 10px 0;
 }
 
-/* Autor */
 .book-card p {
   font-size: 1rem;
   color: var(--paragraph-light);
   margin-bottom: 10px;
 }
 
-/* Button zum Anzeigen der Details */
 .book-card button {
   width: 100%;
   padding: 10px;

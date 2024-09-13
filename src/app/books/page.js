@@ -42,12 +42,9 @@ export default function Books() {
     <main>
       <Navbar />
       <div className="page-container">
-        <h1>Books Page</h1>
-        <button>Add New Book</button>
-
         <ul className="books-list">
           {books.map((book) => (
-            <li classname="book-card" key={book.isbn}>
+            <li className="book-card" key={book.isbn}>
               {/* eslint-disable-next-line */}
               <img className="image" src={book.image} alt={book.title} />
               <h2>{book.title}</h2>
