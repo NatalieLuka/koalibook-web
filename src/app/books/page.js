@@ -45,9 +45,9 @@ export default function Books() {
         <h1>Books Page</h1>
         <button>Add New Book</button>
 
-        <ul>
+        <ul className="books-list">
           {books.map((book) => (
-            <li key={book.isbn}>
+            <li classname="book-card" key={book.isbn}>
               {/* eslint-disable-next-line */}
               <img className="image" src={book.image} alt={book.title} />
               <h2>{book.title}</h2>
