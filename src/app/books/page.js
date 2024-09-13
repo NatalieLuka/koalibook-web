@@ -75,8 +75,6 @@ export default function Books() {
               ) : (
                 <Image src={"/noBookImage.png"} width={200} height={200} />
               )}
-
-
               <h2>{book.title}</h2>
               <p>by {book.author}</p>
               <button onClick={() => router.push(`/books/${book.isbn}`)}>
