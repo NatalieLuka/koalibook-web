@@ -30,7 +30,7 @@ export default function Books() {
         }
 
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         setBooks(data);
       } catch (error) {
         console.log("Error loading books:", error);
@@ -71,8 +71,10 @@ export default function Books() {
           {books.map((book) => (
             <li className="book-card" key={book.isbn}>
               {book.image !== "22" && book.image ? (
+                // eslint-disable-next-line
                 <img className="image" src={book.image} alt={book.title} />
               ) : (
+                // eslint-disable-next-line
                 <Image src={"/noBookImage.png"} width={200} height={200} />
               )}
 

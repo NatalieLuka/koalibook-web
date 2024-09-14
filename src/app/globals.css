@@ -143,6 +143,60 @@ button:hover {
   background-color: var(--paragraph-dark);
 }
 
+.book-detail-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  padding: 40px;
+}
+
+.book-detail-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.book-detail-content {
+  max-width: 800px;
+}
+
+.book-detail-content h1 {
+  font-size: 2.5rem;
+  color: var(--paragraph-dark);
+  margin-bottom: 15px;
+}
+
+.book-detail-content p.author {
+  font-size: 1.8rem;
+  color: var(--paragraph-dark);
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.book-detail-content p.description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--paragraph-light);
+}
+
+.book-detail-content button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: var(--primary);
+  color: var(--paragraph-dark);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.book-detail-content button:hover {
+  background-color: var(--highlight);
+  transform: scale(1.05);
+}
+
 input {
   padding: 5px;
   font-size: 16px;
