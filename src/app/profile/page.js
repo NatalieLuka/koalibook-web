@@ -7,15 +7,13 @@ import ProgressBar from "@/components/Progressbar";
 const API = `${process.env.NEXT_PUBLIC_API_URL}/books`;
 
 export default function Profile() {
-  const { signOut, user, getToken } = useAuth();
+  const { getToken } = useAuth();
   const [data, setData] = useState([]);
-  const isbn = "9783551321459";
 
   const fetchProgressData = useCallback(async () => {
-    if (!isbn) return;
     try {
       const token = await getToken();
-      const response = await fetch(`${API}/${isbn}/progress`, {
+      const response = await fetch(`${API}/totals/progress`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -27,36 +25,27 @@ export default function Profile() {
       }
 
       const result = await response.json();
-      const weekProgress = result.currentWeekProgress.map((entry) => ({
+      const totalProgress = result.totals.map((entry) => ({
         day: entry.weekday,
         pages: entry.pagesRead,
       }));
-      setData(weekProgress);
+      setData(totalProgress);
     } catch (error) {
       console.error("Error retrieving data", error);
     }
-  }, [isbn, getToken]);
+  }, [getToken]);
 
   useEffect(() => {
     fetchProgressData();
   }, [fetchProgressData]);
-
-  const handleSignOut = async () => {
-    try {
-      await signOut();
-    } catch (error) {
-      console.error("SignOut Error:", error);
-    }
-  };
 
   return (
     <main>
       <Navbar />
       <div className="page-container">
         <h1>My Reading Progress</h1>
-        <button onClick={handleSignOut}>Logout</button>
+        <ProgressBar data={data} />
       </div>
-      <ProgressBar data={data} />
     </main>
   );
 }

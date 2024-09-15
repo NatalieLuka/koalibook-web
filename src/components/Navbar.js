@@ -2,9 +2,20 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
+import { useAuth } from "@clerk/nextjs";
 
 const Navbar = () => {
   const router = useRouter();
+  const { user, signOut } = useAuth();
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+      router.push("/");
+    } catch (error) {
+      console.error("SignOut Error:", error);
+    }
+  };
 
   return (
     <nav className={styles.navbar}>
@@ -26,6 +37,11 @@ const Navbar = () => {
         <li>
           <Link href="/profile">Profile</Link>
         </li>
+        {user && (
+          <li className={globalStyles.button}>
+            <button onClick={handleSignOut}>Logout</button>
+          </li>
+        )}
       </ul>
     </nav>
   );

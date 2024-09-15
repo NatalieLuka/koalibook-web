@@ -36,7 +36,7 @@ export default function LoginForm() {
   }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         placeholder="E-mail"
         autoCapitalize="none"
@@ -53,7 +53,7 @@ export default function LoginForm() {
         onChange={(e) => setPassword(e.target.value)}
         required
       />
-      <button type="submit" onClick={handleSubmit}>
+      <button type="submit" className="login-button">
         Login
       </button>
     </form>

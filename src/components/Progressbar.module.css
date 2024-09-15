@@ -3,7 +3,7 @@
   justify-content: space-around;
   align-items: flex-end;
   height: 200px;
-  margin-top: 70px;
+  margin-top: 150px;
   max-width: 400px;
 }
 
@@ -15,20 +15,25 @@
 }
 
 .bar {
-  width: 30px;
+  width: 25px;
   background-color: var(--primary);
   margin-bottom: 5px;
   transition: 0.3s ease;
   position: relative;
+  border-radius: 8px;
+}
+
+.entryPages {
+  font-size: 14px;
 }
 
 .icon {
-  top: -25px;
+  top: -22px;
   width: 30px;
   height: 40px;
   position: absolute;
   left: 50%;
-  transform: translateX(10px) translateY(20px);
+  transform: translateX(8px) translateY(20px);
   transition: 0.3s ease;
 }
 
