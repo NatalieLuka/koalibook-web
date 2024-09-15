@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import climbingKoala from "../../public/climbingKoala.png";
 import styles from "./Progressbar.module.css";
@@ -17,14 +16,13 @@ export default function ProgressBar({ data = [] }) {
 
           return (
             <div key={index} className={styles.barContainer}>
-              <p>{entry.pages}</p>
+              <p className={styles.entryPages}>{entry.pages}</p>
               <div className={styles.bar} style={{ height: `${barHeight}px` }}>
                 {barHeight > 19 && (
                   <Image
                     src={climbingKoala}
                     alt="Climbing Koala"
                     className={styles.icon}
-                    // style={{ bottom: `${barHeight - 15}px` }}
                   />
                 )}
               </div>

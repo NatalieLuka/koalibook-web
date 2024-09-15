@@ -3,13 +3,13 @@
 import { useRouter, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useAuth } from "@clerk/nextjs";
+import Image from "next/image";
 
 const API = `${process.env.NEXT_PUBLIC_API_URL}/books`;
 
 export default function BookDetailPage() {
   const router = useRouter();
-  const { isbn } = useParams(); // Hier wird die ISBN aus der URL erfasst
-  console.log("isbn:", isbn);
+  const { isbn } = useParams();
   const { getToken } = useAuth();
   const [book, setBook] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -50,12 +50,31 @@ export default function BookDetailPage() {
   return (
     <div>
       <div className="page-container">
-        {/* eslint-disable-next-line */}
-        <img src={book.image} alt={book.title} />
-        <h1>{book.title}</h1>
-        <p>by {book.author}</p>
-        <p>{book.description}</p>
-        <button onClick={() => router.push("/books")}>Back to Books</button>
+        <div className="book-detail-container">
+          {book.image !== "22" && book.image ? (
+            // eslint-disable-next-line
+            <img
+              className="book-detail-image"
+              src={book.image}
+              alt={book.title}
+            />
+          ) : (
+            // eslint-disable-next-line
+            <Image
+              className="book-detail-image"
+              src={"/noBookImage.png"}
+              alt="Koala Placeholder"
+              width={400}
+              height={400}
+            />
+          )}
+          <div className="book-detail-content">
+            <h1>{book.title}</h1>
+            <p className="author">by {book.author}</p>
+            <p>{book.description}</p>
+            <button onClick={() => router.push("/books")}>Back to Books</button>
+          </div>
+        </div>
       </div>
     </div>
   );
