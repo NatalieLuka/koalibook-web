@@ -1,14 +1,22 @@
 "use client";
 import { useState } from "react";
-import { useSignIn } from "@clerk/nextjs";
+import { useSignIn, useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
   const { signIn, setActive, isLoaded } = useSignIn();
   const router = useRouter();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { user, signOut } = useAuth();
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+    } catch (error) {
+      console.error("SignOut Error:", error);
+    }
+  };
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -56,6 +64,7 @@ export default function LoginForm() {
       <button type="submit" className="login-button">
         Login
       </button>
+      <button onClick={handleSignOut}>Logout</button>
     </form>
   );
 }
